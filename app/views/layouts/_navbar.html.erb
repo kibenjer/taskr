@@ -8,13 +8,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><i class="fa fa-circle-o-notch"></i> Taskr</a>
+      <%= link_to '<i class="fa fa-circle-o-notch"></i> Taskr'.html_safe, root_path, class: 'navbar-brand' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="about">About</a></li>
+      <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+        <li><%= link_to 'Account Setting', edit_user_registration_path %></li>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Log In', new_user_session_path %></li>
+      <% end %>
         <li class="dropdown">
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
