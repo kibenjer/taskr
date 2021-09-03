@@ -1,5 +1,14 @@
 <h3>New Task</h3>
 
+<% if @task.errors.any? %>
+<h4>Oops Something went wrong: </h4>
+	<ul>
+		<% @task.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
 <%= simple_form_for @task do |f| %>
   <%= f.input :content %>
   <%= f.button :submit %>
