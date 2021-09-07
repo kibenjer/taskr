@@ -1,6 +1,7 @@
 <h1>Showing Task</h1>
 
 <strong>Content: </strong> <%= @task.content %>
+<strong>State: </strong> <%= @task.state %>
 
 <p>
 	<%= link_to 'All Tasks', tasks_path %> | <%= link_to 'Edit Task', edit_task_path(@task) %>
