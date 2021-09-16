@@ -7,10 +7,9 @@
 	</ul>
 <% end %>
 
-<%= simple_form_for @task do |f| %>
-  <%= f.input :content %>
-  <%= f.input :state %>
-  <%= f.button :submit %>
+<%= simple_form_for @task, html: {class: 'form-signin'} do |f| %>
+  <%= f.input :content, label: false, placeholder: 'Content', autofocus:true  %>
+  <%= f.button :submit, class: 'btn btn-primary btn-block mt-3 mb-3' %>
 <% end %>
 
 <%= link_to 'Go back to all tasks', tasks_path %>
