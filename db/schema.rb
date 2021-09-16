@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_220908) do
+ActiveRecord::Schema.define(version: 2021_09_16_091458) do
 
   create_table "tasks", force: :cascade do |t|
     t.text "content"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_220908) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.string "state", default: "to_do"
+    t.text "content_html"
   end
 
   create_table "users", force: :cascade do |t|
